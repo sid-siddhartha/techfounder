@@ -1,5 +1,4 @@
 # Technology Lookup Web App
-# Technology Lookup Web App
 
 ## Overview
 
