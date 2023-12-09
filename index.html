@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Lookup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Technology Lookup</h1>
+        <div class="notice-bar">
+            The information is not 100% accurate. Changes are going to be done soon. Thank You!!
+        </div>
+        
+        <!-- Update the input element with the oninput attribute -->
+        <input type="text" id="searchInput" placeholder="Enter technology name..." oninput="showSuggestions()">
+        <button onclick="search()">Search</button>
+        <!-- Add a div to display autocomplete suggestions -->
+        <div id="suggestions" class="autocomplete-suggestions"></div>
+        <div id="popup" class="popup-container">
+            <div id="result" class="popup-content"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-item">
+                <p>Designed by Human</p>
+            </div>
+            <div class="footer-item">
+                <p>&copy; 2023 Sid</p>
+            </div>
+            <div class="footer-item">
+                <p>Created by ChatGPT</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

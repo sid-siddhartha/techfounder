@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    width: 70%;
+}
+
+button {
+    padding: 10px;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.light-beam {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.8) 30%, transparent 50%);
+    pointer-events: none;
+    animation: light-beam-animation 1s forwards;
+    z-index: 0;
+}
+
+@keyframes light-beam-animation {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Add styles for autocomplete suggestions */
+.autocomplete-suggestions {
+    position: absolute;
+    width: 70%;
+    max-height: 150px;
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: none;
+    
+    /* Align suggestions with the input field */
+    top: calc(100% + 5px);
+    left: 15%;
+    margin-top: 0;
+}
+
+.autocomplete-suggestions p {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.autocomplete-suggestions p:last-child {
+    border-bottom: none;
+}
+
+.notice-bar {
+    background-color: #ffc107;
+    color: #333;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    text-align: center;
+    font-size: medium;
+    font-weight: bolder;
+    color: red;
+    animation: moveNoticeBar 10s linear infinite alternate;
+}
+
+@keyframes moveNoticeBar {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 2px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item {
+    flex: 1;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .autocomplete-suggestions {
+        width: 100%;
+        left: 0;
+    }
+
+    .popup-content {
+        max-width: 90%;
+    }
+
+    .notice-bar {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
